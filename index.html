@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <title>Mahbub QR Print</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="logo">QR</div><div><strong>Mahbub QR Print</strong><small id="tagline">স্ক্যান করুন, ফাইল পাঠান, প্রিন্ট নিন</small></div></div>
+    <button id="langToggle" class="outline" type="button">English</button>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow" data-bn="দ্রুত • সহজ • নির্ভরযোগ্য" data-en="FAST • EASY • RELIABLE">দ্রুত • সহজ • নির্ভরযোগ্য</div>
+      <h1 data-bn="আপনার প্রিন্ট অর্ডার দিন অনলাইনেই" data-en="Place your print order online">আপনার প্রিন্ট অর্ডার দিন অনলাইনেই</h1>
+      <p data-bn="ছবি বা PDF আপলোড করুন। প্রিন্টের ধরন বেছে নিয়ে অর্ডার পাঠান। আমরা দোকান থেকে অর্ডার প্রস্তুত করব।" data-en="Upload an image or PDF, choose your print settings, and send your order. We’ll prepare it at the shop.">ছবি বা PDF আপলোড করুন। প্রিন্টের ধরন বেছে নিয়ে অর্ডার পাঠান। আমরা দোকান থেকে অর্ডার প্রস্তুত করব।</p>
+    </section>
+    <section class="panel">
+      <div class="section-head"><div><h2 data-bn="নতুন প্রিন্ট অর্ডার" data-en="New print order">নতুন প্রিন্ট অর্ডার</h2><p data-bn="* চিহ্নিত ঘরগুলো পূরণ করুন" data-en="Fill in the fields marked *">* চিহ্নিত ঘরগুলো পূরণ করুন</p></div><span class="step">01 / ORDER</span></div>
+      <form id="orderForm">
+        <div class="grid two">
+          <label><span data-bn="আপনার নাম *" data-en="Your name *">আপনার নাম *</span><input id="customerName" required maxlength="100" autocomplete="name" placeholder="নাম / Name"></label>
+          <label><span data-bn="মোবাইল নম্বর *" data-en="Mobile number *">মোবাইল নম্বর *</span><input id="phone" required maxlength="25" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX"></label>
+        </div>
+        <label><span data-bn="ফাইল আপলোড করুন *" data-en="Upload file *">ফাইল আপলোড করুন *</span><input id="file" type="file" required accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp"><small data-bn="PDF, JPG, PNG বা WEBP • সর্বোচ্চ 10 MB" data-en="PDF, JPG, PNG or WEBP • maximum 10 MB">PDF, JPG, PNG বা WEBP • সর্বোচ্চ 10 MB</small></label>
+        <div class="grid two">
+          <label><span data-bn="প্রিন্ট সাইজ *" data-en="Paper size *">প্রিন্ট সাইজ *</span><select id="paper"><option value="A4">A4</option><option value="A5">A5</option><option value="passport">পাসপোর্ট সাইজ / Passport size</option><option value="photo">4R Photo</option></select></label>
+          <label><span data-bn="প্রিন্টের ধরন *" data-en="Print type *">প্রিন্টের ধরন *</span><select id="color"><option value="bw">সাদা-কালো / Black & white</option><option value="color">কালার / Color</option></select></label>
+        </div>
+        <div class="grid two">
+          <label><span data-bn="এক পাশে / দুই পাশে" data-en="Sides">এক পাশে / দুই পাশে</span><select id="sides"><option value="single">এক পাশে / Single-sided</option><option value="double">দুই পাশে / Double-sided</option></select></label>
+          <label><span data-bn="কপি সংখ্যা *" data-en="Number of copies *">কপি সংখ্যা *</span><input id="copies" type="number" min="1" max="500" value="1" required></label>
+        </div>
+        <label><span data-bn="বিশেষ নির্দেশনা (ঐচ্ছিক)" data-en="Special instructions (optional)">বিশেষ নির্দেশনা (ঐচ্ছিক)</span><textarea id="notes" maxlength="500" rows="3" placeholder="যেমন: দুই পিঠে প্রিন্ট"></textarea></label>
+        <div class="estimate"><div><span data-bn="আনুমানিক মূল্য" data-en="Estimated price">আনুমানিক মূল্য</span><small data-bn="দোকানের মূল্যতালিকা অনুযায়ী পরিবর্তনযোগ্য" data-en="May be adjusted to your shop’s price list">দোকানের মূল্যতালিকা অনুযায়ী পরিবর্তনযোগ্য</small></div><strong id="price">৳ 2</strong></div>
+        <label class="consent"><input id="consent" type="checkbox" required><span data-bn="আমি নিশ্চিত করছি যে আপলোড করা ফাইলটি প্রিন্টের জন্য এবং ব্যক্তিগত তথ্য নিরাপদে ব্যবহারের শর্তে সম্মত। *" data-en="I confirm this file is for printing and agree to the privacy terms. *">আমি নিশ্চিত করছি যে আপলোড করা ফাইলটি প্রিন্টের জন্য এবং ব্যক্তিগত তথ্য নিরাপদে ব্যবহারের শর্তে সম্মত। *</span></label>
+        <button id="submitBtn" class="primary" type="submit"><span data-bn="অর্ডার পাঠান" data-en="Submit order">অর্ডার পাঠান</span> <span aria-hidden="true">→</span></button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+    <section class="info-grid">
+      <article><div class="info-icon">↗</div><h3 data-bn="সহজ অর্ডার" data-en="Easy ordering">সহজ অর্ডার</h3><p data-bn="মোবাইল থেকেই ফাইল পাঠান।" data-en="Send your files from your phone.">মোবাইল থেকেই ফাইল পাঠান।</p></article>
+      <article><div class="info-icon">✓</div><h3 data-bn="দোকানে প্রস্তুত" data-en="Prepared at the shop">দোকানে প্রস্তুত</h3><p data-bn="অর্ডার যাচাই করে প্রিন্ট করা হবে।" data-en="Orders are checked before printing.">অর্ডার যাচাই করে প্রিন্ট করা হবে।</p></article>
+      <article><div class="info-icon">⌂</div><h3 data-bn="দোকান থেকে সংগ্রহ" data-en="Collect from shop">দোকান থেকে সংগ্রহ</h3><p data-bn="প্রস্তুত হলে আপনার সঙ্গে যোগাযোগ করা হবে।" data-en="We’ll contact you when it’s ready.">প্রস্তুত হলে আপনার সঙ্গে যোগাযোগ করা হবে।</p></article>
+    </section>
+    <footer><strong>Mahbub QR Print</strong><p data-bn="আপনার প্রিন্ট, সহজ সমাধান।" data-en="Your print, made simple.">আপনার প্রিন্ট, সহজ সমাধান।</p><small id="backendNotice">ডেমো মোড: অর্ডার সাবমিটের আগে ব্যাকএন্ড সেটআপ করুন।</small></footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
